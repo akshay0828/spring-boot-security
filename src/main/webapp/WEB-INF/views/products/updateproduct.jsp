@@ -15,7 +15,7 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
-<title>HomeMade Spices and Snacks</title>
+<title>Update Products</title>
 <style>
      body{
         background-image: url('https://th.bing.com/th/id/R.13ff4c94a06cd0d31160fdb169e2ac57?rik=rPUGN%2b%2b%2bmAQyqw&riu=http%3a%2f%2fwww.jimahoffman.com%2fBlender%2fblendertextures%2ftexture%2fwood%2fboards3_vcyc.jpg&ehk=%2b3OJpU6XbOJU%2f%2fxJfjxp8llvH%2fn3ku0OaHlY20NAKJg%3d&risl=1&pid=ImgRaw&r=0');
@@ -103,9 +103,8 @@
 				<ul class="navbar-nav mr-auto"></ul>
 				<ul class="navbar-nav">
 					<li class="nav-item active"><a class="nav-link"
-						href="/adminhome" >Home Page</a></li>
-					<li class="nav-item active"><a class="nav-link"
-						href="/logout" >Logout</a></li>
+						href="/products/prolist/${product.userid}" >Back</a></li>
+					
 
 				</ul>
 
@@ -117,12 +116,26 @@
 
  <div class="jumbotron container border border-info">
 		<h3 style = "color:white;">Update Existing Product</h3>
-		
+		<br>
+		      <div class="col-sm-3">
+					<div class="form-group">
+						<label for="weight"style = "color:white;" hidden ="hidden">User_id</label> 
+						<input type="hidden" class="form-control border border-warning"  name="userid" value="${product.userid}">
+					</div>
+					</div>
+              <div class="col-sm-3">				
+					<div class="form-group">
+						<label for="price"style = "color:white;">Product Name</label> 
+						<input type="text" class="form-control border border-warning"  name="productName" value="${product.productName}">
+					</div>
+					</div>
+		        
                 <div class="col-sm-3">				
 					<div class="form-group">
 						<label for="price"style = "color:white;">Price</label> 
 						<input type="number" class="form-control border border-warning"  name="price" value="${product.price}">
 					</div>
+					
 					</div>
 					<div class="col-sm-3">
 					<div class="form-group">
@@ -165,9 +178,9 @@
 		<input type="submit" class="button-55" name="submit" value="Save"/>
 		</td>
 		</div>
-		<td>
+		<!-- <td>
 		<input type="submit" class="button-55"  name="submit" value="Cancel" />
-		</td>
+		</td> -->
 		</tr>
 		</table>
 				</div>

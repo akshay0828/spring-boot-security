@@ -9,9 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.valtech.spring.security.entity.CartLine;
 import com.valtech.spring.security.entity.Products;
-import com.valtech.spring.security.repo.CartLineRepo;
+
 import com.valtech.spring.security.repo.ProductRepository;
 
 @Service
@@ -20,11 +19,6 @@ public class ProductService implements product {
 	
 	@Autowired
 	private ProductRepository productRepository;
-	
-	@Autowired 
-	
-	private CartLineRepo cartLineRepo;
-	
 	
 	
 	@Override
@@ -48,18 +42,24 @@ public class ProductService implements product {
 	public List<Products> getAllProducts(){
 		   return 	productRepository.findAll();
 		}
-	
-	
-	
-	public List<CartLine> getAllLine(){
-		   return 	cartLineRepo.findAll();
-		}
-	
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public Products updateProduct(Products product) {
 		return productRepository.save(product);
 	}
 	
+	public List<Products> getAllproductsbyuser(int userid){
+		return productRepository.findByUserid(userid);
+	}
+
 	
+	public int getuserid(int id){
+		return productRepository.findUseridById(id);
+	}
+	
+	public void deleteProduct(int id){
+		 productRepository.deleteById(id);
+	}
+
+
 }

@@ -140,7 +140,7 @@
 						<h4 class="card-title">Product Management</h4>
 						<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/product-management-16-1072230.png" width="100" height="100">
 						<p class="card-text">Manage all the products here.</p>
-						<a href="/products/prolist" class="button-33">Manage</a>
+						<a href="/products/prolist/${user.id}" class="button-33">Manage</a>
 
 					</div>
 				</div>

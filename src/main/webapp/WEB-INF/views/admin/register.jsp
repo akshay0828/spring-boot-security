@@ -214,40 +214,51 @@
 	<div class="container">
 		<h1 class="form-title">Sign Up as Seller</h1>
 		<form action="/admin/register" method="post">
+		
 			<div class="main-user-info">
+			
 				<div class="user-input-box">
-					<label for="fullName">Full Name</label> <input type="text"
+					<label for="fullName">Full Name</label> <input type="text" required
 						id="fullName" name="name" placeholder="Enter Full Name" />
 				</div>
 				<div class="user-input-box">
-					<label for="username">Username</label> <input type="text"
+					<label for="username">Username</label> <input type="text" required pattern="[A-Za-z]{3,10}"  title="User name must be between 3-10 characters!!"
 						id="username" name="username" placeholder="Enter Username" />
 				</div>
 				<div class="user-input-box">
-					<label for="email">Email</label> <input type="email" id="email"
-						name="email" placeholder="email" />
+					<label for="email">Email</label> <input type="email" id="email" required
+						name="email" placeholder="Enter Email" />
 				</div>
 				<div class="user-input-box">
-					<label for="phoneNumber">Phone Number</label> <input type="text"
-						id="phoneNumber" name="contact"
+					<label for="phoneNumber">Phone Number</label> <input type="text" required
+						id="phoneNumber" name="contact" pattern="^\d{10}$"  title="Invalid Phone number!!"
 						placeholder="Enter Phone Number" />
 				</div>
 				<div class="user-input-box">
-					<label for="password">Password</label> <input type="password"
-						id="password" name="pass" placeholder="Enter Password" />
+					<label for="password">Password</label> <input type="password" required
+						id="password" name="pass" placeholder="Enter Password"  pattern="[A-Za-z0-9#@$&]{3,10}" title="Password must be between 3-10 characters and type only valid characters!!" />
 				</div>
 				<div class="user-input-box">
 					<label for="confirmPassword">Confirm Password</label> <input
-						type="password" id="confirmPassword" name="cnfmpass"
+						type="password" id="confirmPassword" name="cnfmpass" required
 						placeholder="Confirm Password" />
 				</div>
 				<div class="user-input-box">
 					<label for="confirmPassword">Address</label> <input
-						type="text" id="address" name="address"
+						type="text" id="address" name="address" required
 						placeholder="Address" />
 				</div>
 			</div>
-
+			
+    <c:if test="${not empty error }">
+        <div style="color:red;"><h3>${error}</h3></div><br/>
+        </c:if>
+        
+         <c:if test="${not empty error }">
+        <div style="color:red;"><h3>${userna}</h3></div><br/>
+        </c:if>
+        
+        
 			<div class="form-submit-btn">
 				<input type="submit" value="Submit and Back to Login">
 			</div>

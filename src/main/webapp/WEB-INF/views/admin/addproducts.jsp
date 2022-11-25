@@ -14,7 +14,7 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
-<title>Document</title>
+<title>Add Products</title>
 
 <style>
 body {
@@ -102,9 +102,8 @@ body {
 					<ul class="navbar-nav mr-auto"></ul>
 					<ul class="navbar-nav">
 						<li class="nav-item active"><a class="nav-link"
-							href="/admin/adminhome">Home Page</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="/logout">Logout</a></li>
+							href="/admin/adminhome/${user.id}">Home Page</a></li>
+						
 
 					</ul>
 
@@ -121,9 +120,9 @@ body {
 					<br> <br>
 					<div class="col-sm-3">
 						<div class="form-group">
-							<label for="productName" style="color: white;">User_id</label>
-							<input type="text"
-						id="user_id" name="user_id"  />
+							<label for="productName" style="color: white;" hidden="hidden">User_id</label>
+							<input 
+						id="user_id" name="user_id" value="${user.id}" type="hidden" />
 						</div>
 					</div>
 					

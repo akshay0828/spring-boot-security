@@ -99,9 +99,9 @@ input[type="submit"]:hover{
         <h1>Sign In as Seller</h1>
         <form action="/admin/login" method="post">
             <label>Username</label>
-            <input type="text" placeholder="Enter Username"  id="exampleInputEmail1"  name="username"  >
+            <input type="text" placeholder="Enter Username"  id="exampleInputEmail1"  name="username"  required >
             <label>Password</label>
-            <input type="password" placeholder="Enter Password"  id="exampleInputPassword1" name="pass">
+            <input type="password" placeholder="Enter Password"  id="exampleInputPassword1" name="pass" required>
            <center> ${mess} </center>
             <input type="submit" value="Sign In">
             

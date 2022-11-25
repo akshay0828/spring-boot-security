@@ -27,36 +27,26 @@ public class Products {
 	@Column(columnDefinition = "MEDIUMBLOB")
 	private String image;
 	
-	private int user_id;
-	
-	
-	
+	private int userid;
 
-	
-	
-	
-	
-	
-	
 	public Products() {
 	}
 	
 	
-	public Products(String productName,double price, float weight, String productDescription, int quantity,int user_id) {
+	public Products(String productName,double price, float weight, String productDescription, int quantity) {
 		super();
 		this.productName=productName;
 		this.price = price;
 		this.weight = weight;
 		this.productDescription = productDescription;
 		this.quantity = quantity;
-		this.user_id=user_id;
 		
 		
 	}
 	
 	
 	
-	public Products(int id, String productName,double price, float weight, String productDescription, int quantity,int user_id) {
+	public Products(int id, String productName,double price, float weight, String productDescription, int quantity) {
 		super();
 		this.id = id;
 		this.productName=productName;
@@ -64,7 +54,6 @@ public class Products {
 		this.weight = weight;
 		this.productDescription = productDescription;
 		this.quantity = quantity;
-		this.user_id=user_id;
 		
 		
 	}
@@ -107,10 +96,6 @@ public class Products {
 	}
 	
 
-
-
-	
-
 	public String getImage() {
 		return image;
 	}
@@ -119,21 +104,21 @@ public class Products {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
+	
 
 
-	public int getUser_id() {
-		return user_id;
+	
+	
+
+	public int getUserid() {
+		return userid;
 	}
 
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
-	
-	
-
-
-	
 
 
 	@Override

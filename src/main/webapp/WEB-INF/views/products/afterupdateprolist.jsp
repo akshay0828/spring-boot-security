@@ -5,7 +5,7 @@
 <head>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>List of Products</title>
+<title>List Of Products</title>
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -120,7 +120,7 @@
 				<ul class="navbar-nav mr-auto"></ul>
 				<ul class="navbar-nav">
 					<li class="nav-item active"><a class="nav-link"
-						href="/admin/adminhome/${user.id}">Home Page</a></li>
+						href="/admin/adminhome/${add}">Home Page</a></li>
 
 				</ul>
 
@@ -134,13 +134,12 @@
 		<thead>
 			<tr>
 				<td style="visibility:hidden;" style="width:2%">Id</td>
-				<td style="text-align: center">Product Name</td>
+				<td>Product Name</td>
 				<td>Price</td>
 				<td>Weight</td>
 				<td>productDescription</td>
 				<td>Quantity</td>
 				<td colspan="2"> Actions </td>
-				
 			</tr>
 		</thead>
 		<tbody>
@@ -152,16 +151,16 @@
 					<td>${product.weight}</td>
 					<td>${product.productDescription}</td>
 					<td>${product.quantity}</td>
-				
-					<td><a href="/products/updateproduct/${product.id}"><input type="submit"  name="Update" value="Update" class="button-17"></a></td>
 					
-					<!-- <td><a href="/products/prolist/${user.id}"><input type="submit"  name="Delete" value="Delete"></a></td> -->
+					<td><a href="/products/updateproduct/${product.id}"><input type="submit"  name="Update" value="Update" class="button-17"></a></td>
+					<%-- <td><a href="/products/updateproduct/${product.id}"><input type="submit"  name="Delete" value="Delete"></a></td> --%>
 					<form method="post"
-                                action="/products/prolist/${product.id}/${user.id}">
+                                action="/products/prolist/${product.id}/${add}">
                                 <td><input type="submit" value="Delete"
                                     id="Delete"
                                     name="Delete" class="button-17"> <!-- <i class="fa fa-ban"></i> --></td>
                             </form>
+					
 				</tr>
 			</c:forEach>
 		</tbody>

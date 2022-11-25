@@ -10,5 +10,12 @@ import com.valtech.spring.security.entity.Products;
 @Repository
 public interface ProductRepository extends JpaRepository<Products, Integer>{
 	Products findById(int id);
+	
+	List<Products> findByUserid(int userid);
+	
+	int findUseridById(int id);
+	
+	
+	
 
 }
